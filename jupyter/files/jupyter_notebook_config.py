@@ -7,6 +7,6 @@ c.NotebookApp.notebook_dir = u'/srv/jupyter/notebook'
 c.NotebookApp.password = '{{ server.auth.password }}'
 {%- endif %}
 {%- if server.ssl is defined %}
-c.NotebookApp.certfile = {{server.ssl.get('certfile', '/srv/jupyter/cert.pem')}}
-c.NotebookApp.keyfile = {{server.ssl.get('keyfile', '/srv/jupyter/cert.key')}}
+c.NotebookApp.certfile = "{{server.ssl.get('certfile', '/srv/jupyter/cert.pem')}}"
+c.NotebookApp.keyfile = "{{server.ssl.get('keyfile', '/srv/jupyter/cert.key')}}"
 {%- endif %}
