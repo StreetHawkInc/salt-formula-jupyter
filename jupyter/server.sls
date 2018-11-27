@@ -52,6 +52,7 @@ jupyter_notebook_source:
   - name: {{ server.notebook_source.address }}
   - target: /srv/jupyter/notebook
   - branch: {{ server.notebook_source.get('branch', server.notebook_source.get('revision', 'master')) }}
+  - user: jupyter
   - require:
     - virtualenv: /srv/jupyter
 
